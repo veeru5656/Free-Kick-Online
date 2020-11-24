@@ -1,0 +1,57 @@
+{
+	"name": "Back",
+	"plugin-id": "Sprite",
+	"sid": 527649177041285,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 121,
+						"height": 113,
+						"originX": 0.493333,
+						"originY": 0.503704,
+						"originalSource": "C:\\Users\\LinBeck\\Desktop\\Orange\\b_Forward1.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 84,
+						"collisionPoly": {
+							"points": [
+								0.2975206611570248,
+								0.3185840707964602,
+								0.5,
+								0.22123893805309736,
+								0.9834710743801653,
+								0.008849557522123894,
+								0.9834710743801653,
+								0.5,
+								0.9834710743801653,
+								0.9823008849557522,
+								0.5,
+								0.7168141592920354,
+								0.33884297520661155,
+								0.6283185840707964,
+								0.09090909090909091,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 199155089076759,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

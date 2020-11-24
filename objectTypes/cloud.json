@@ -1,0 +1,57 @@
+{
+	"name": "cloud",
+	"plugin-id": "Sprite",
+	"sid": 123464488355444,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 144,
+						"height": 73,
+						"originX": 0.5,
+						"originY": 0.506849,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\AI\\football\\cload.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5,
+						"collisionPoly": {
+							"points": [
+								0.159722,
+								0.315068,
+								0.5,
+								0,
+								0.819444,
+								0.356164,
+								0.965278,
+								0.493151,
+								0.951389,
+								0.90411,
+								0.5,
+								1,
+								0.0486111,
+								0.90411,
+								0.0416667,
+								0.493151
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 321086696684633,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

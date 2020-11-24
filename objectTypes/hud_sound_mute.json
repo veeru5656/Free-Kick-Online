@@ -1,0 +1,49 @@
+{
+	"name": "Hud_sound_mute",
+	"plugin-id": "Sprite",
+	"sid": 158210870037186,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 55,
+						"height": 55,
+						"originX": 0.509091,
+						"originY": 0.509091,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\AI\\football\\audio1.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 28,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 55,
+						"height": 55,
+						"originX": 0.509091,
+						"originY": 0.509091,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\AI\\football\\audio2.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 29,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 509645585234477,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"name": "Target",
+	"plugin-id": "Sprite",
+	"sid": 154165882521716,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 104780726087184
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 97,
+						"height": 97,
+						"originX": 0.505155,
+						"originY": 0.505155,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\AI\\football\\hit.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2,
+						"collisionPoly": {
+							"points": [
+								0.154639,
+								0.154639,
+								0.494845,
+								0,
+								0.85567,
+								0.14433,
+								1,
+								0.494845,
+								0.85567,
+								0.85567,
+								0.494845,
+								1,
+								0.14433,
+								0.85567,
+								0,
+								0.494845
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 807522034975551,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

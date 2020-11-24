@@ -1,0 +1,43 @@
+{
+	"name": "goalpostland2",
+	"plugin-id": "Sprite",
+	"sid": 677586816671254,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 979663065986494
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 232,
+						"height": 15,
+						"originX": 0.5,
+						"originY": 0.533333,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\goalpostland-animation 1-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 23,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 808076051902996,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

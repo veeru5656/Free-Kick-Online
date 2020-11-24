@@ -1,0 +1,16 @@
+{
+	"name": "Text_Score2",
+	"plugin-id": "Text",
+	"sid": 630167936624536,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "hp",
+			"type": "number",
+			"desc": "",
+			"sid": 425861490961774
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

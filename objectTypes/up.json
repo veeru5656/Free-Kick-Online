@@ -1,0 +1,64 @@
+{
+	"name": "up",
+	"plugin-id": "Sprite",
+	"sid": 383731380616124,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "hp",
+			"type": "number",
+			"desc": "",
+			"sid": 565692479873244
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 813,
+						"height": 392,
+						"originX": 0.500615,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\up-default-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 25,
+						"collisionPoly": {
+							"points": [
+								0.238622,
+								0.494898,
+								0.499385,
+								0.00510204,
+								0.937269,
+								0.130102,
+								0.99754,
+								0.5,
+								0.923739,
+								0.841837,
+								0.499385,
+								0.997449,
+								0.116851,
+								0.757653,
+								0.239852,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 664616775857492,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

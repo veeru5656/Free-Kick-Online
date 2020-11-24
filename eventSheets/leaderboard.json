@@ -1,0 +1,1294 @@
+{
+	"name": "Leaderboard",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "button"
+		},
+		{
+			"eventType": "variable",
+			"name": "desplay",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 196812178266031
+		},
+		{
+			"eventType": "variable",
+			"name": "leader_length",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 478347804462391
+		},
+		{
+			"eventType": "variable",
+			"name": "slide",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 492242647077906
+		},
+		{
+			"eventType": "variable",
+			"name": "last",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 842936796216492
+		},
+		{
+			"eventType": "variable",
+			"name": "lastscore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 949313547310903
+		},
+		{
+			"eventType": "variable",
+			"name": "ads",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 157253267395030
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 112544411694718
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "score_text",
+					"sid": 815797387843174,
+					"parameters": {
+						"text": "\"Score: \" & SCORE"
+					}
+				},
+				{
+					"id": "load-image-from-url",
+					"objectClass": "pic2",
+					"sid": 646745037801805,
+					"parameters": {
+						"uri": "InstantGames.PlayerPhotoURL",
+						"size": "keep-current-size",
+						"cross-origin": "anonymous"
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 729661914556401,
+					"parameters": {
+						"key": "\"ads\""
+					}
+				}
+			],
+			"sid": 908063346524268,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 150402368274843,
+							"parameters": {
+								"variable": "SCORE",
+								"comparison": 4,
+								"value": "HIGHSCORE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 494257914779492,
+							"parameters": {
+								"variable": "HIGHSCORE",
+								"value": "SCORE"
+							}
+						},
+						{
+							"id": "set-score",
+							"objectClass": "InstantGames",
+							"sid": 264967031601220,
+							"parameters": {
+								"name": "\"highscores\"",
+								"is-contextual": "no",
+								"score": "SCORE"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 305384840464847,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "load-player-score",
+							"objectClass": "InstantGames",
+							"sid": 551083184944658,
+							"parameters": {
+								"name": "\"highscores\"",
+								"is-contextual": "no"
+							}
+						}
+					],
+					"sid": 443998904442680
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 302996617365924
+						}
+					],
+					"actions": [
+						{
+							"id": "load-player-score",
+							"objectClass": "InstantGames",
+							"sid": 769280588659660,
+							"parameters": {
+								"name": "\"highscores\"",
+								"is-contextual": "no"
+							}
+						}
+					],
+					"sid": 252537036112972
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-player-score-loaded",
+					"objectClass": "InstantGames",
+					"sid": 726832923434704
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "playerName",
+					"sid": 465548785539721,
+					"parameters": {
+						"text": "InstantGames.PlayerName"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "playerScore",
+					"sid": 393647012643936,
+					"parameters": {
+						"text": "InstantGames.PlayerScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "PlayerRank",
+					"sid": 769185776537704,
+					"parameters": {
+						"text": "InstantGames.PlayerRank"
+					}
+				},
+				{
+					"id": "load-leaderboard",
+					"objectClass": "InstantGames",
+					"sid": 109556686321080,
+					"parameters": {
+						"name": "\"highscores\"",
+						"is-contextual": "no",
+						"results": "all",
+						"count": "10",
+						"offset": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 732865476321405,
+					"parameters": {
+						"variable": "HIGHSCORE",
+						"value": "InstantGames.PlayerScore"
+					}
+				}
+			],
+			"sid": 875937840795372
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-leaderboard-loaded",
+					"objectClass": "InstantGames",
+					"sid": 890829150602759
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 891055974218576,
+					"parameters": {
+						"variable": "leader_length",
+						"value": "InstantGames.LeaderboardResultCount"
+					}
+				},
+				{
+					"id": "call-function",
+					"objectClass": "Function",
+					"sid": 632950997800308,
+					"parameters": {
+						"name": "\"display_leaderboard\"",
+						"parameter-n": []
+					}
+				}
+			],
+			"sid": 256891532549949
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-function",
+					"objectClass": "Function",
+					"sid": 902666440638937,
+					"parameters": {
+						"name": "\"display_leaderboard\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 847578705361588,
+					"parameters": {
+						"variable": "leader_length",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 586646886694810,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 677845160354954,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "0",
+								"end-index": "InstantGames.LeaderboardResultCount -1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 810057197424898,
+							"parameters": {
+								"variable": "desplay",
+								"comparison": 2,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 391082856681484,
+							"parameters": {
+								"object-to-create": "DB_BG",
+								"layer": "2",
+								"x": "360",
+								"y": "580+ loopindex(\"i\")*120"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 457045346967640,
+							"parameters": {
+								"object-to-create": "Text_rank",
+								"layer": "2",
+								"x": "100",
+								"y": "580+ loopindex(\"i\")*120"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_rank",
+							"sid": 533599096638803,
+							"parameters": {
+								"text": "InstantGames.LeaderboardRankAt(loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 661120855460501,
+							"parameters": {
+								"object-to-create": "pic",
+								"layer": "2",
+								"x": "180",
+								"y": "580+ loopindex(\"i\")*120"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pic",
+							"sid": 639553117393564,
+							"parameters": {
+								"frame-number": "loopindex(\"i\")"
+							}
+						},
+						{
+							"id": "load-image-from-url",
+							"objectClass": "pic",
+							"sid": 646001878537715,
+							"parameters": {
+								"uri": "InstantGames.LeaderboardPlayerPhotoURLAt(loopindex(\"i\"))",
+								"size": "keep-current-size",
+								"cross-origin": "anonymous"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 817459659872537,
+							"parameters": {
+								"object-to-create": "TextName",
+								"layer": "2",
+								"x": "370",
+								"y": "580+ loopindex(\"i\")*120"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextName",
+							"sid": 822990410971659,
+							"parameters": {
+								"text": "InstantGames.LeaderboardPlayerNameAt(loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 710752121051144,
+							"parameters": {
+								"object-to-create": "Text_Score",
+								"layer": "2",
+								"x": "580",
+								"y": "580+ loopindex(\"i\")*120"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Score",
+							"sid": 107428186674034,
+							"parameters": {
+								"text": "InstantGames.LeaderboardScoreAt(loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "NULL",
+							"sid": 941950682988899
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 174933290006623,
+							"parameters": {
+								"variable": "desplay",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 696113109825430,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for",
+							"objectClass": "System",
+							"sid": 914127168338762,
+							"parameters": {
+								"name": "\"i\"",
+								"start-index": "0",
+								"end-index": "InstantGames.LeaderboardResultCount -1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 268972496057297,
+							"parameters": {
+								"variable": "desplay",
+								"comparison": 2,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "load",
+							"sid": 264639839074931
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 242404622271324,
+							"parameters": {
+								"object-to-create": "DB_BG",
+								"layer": "2",
+								"x": "360",
+								"y": "480+ loopindex(\"i\")*110"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 875803448174449,
+							"parameters": {
+								"object-to-create": "Text_rank2",
+								"layer": "2",
+								"x": "100",
+								"y": "480+ loopindex(\"i\")*110"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_rank2",
+							"sid": 101581316842782,
+							"parameters": {
+								"text": "InstantGames.LeaderboardRankAt(loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 630582029989167,
+							"parameters": {
+								"object-to-create": "pic",
+								"layer": "2",
+								"x": "180",
+								"y": "480+ loopindex(\"i\")*110"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "pic",
+							"sid": 323508958749072,
+							"parameters": {
+								"frame-number": "loopindex(\"i\")"
+							}
+						},
+						{
+							"id": "load-image-from-url",
+							"objectClass": "pic",
+							"sid": 484423594226179,
+							"parameters": {
+								"uri": "InstantGames.LeaderboardPlayerPhotoURLAt(loopindex(\"i\"))",
+								"size": "keep-current-size",
+								"cross-origin": "anonymous"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 525510917023533,
+							"parameters": {
+								"object-to-create": "TextName2",
+								"layer": "2",
+								"x": "370",
+								"y": "480+ loopindex(\"i\")*110"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TextName2",
+							"sid": 695692490850519,
+							"parameters": {
+								"text": "InstantGames.LeaderboardPlayerNameAt(loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 648750745106212,
+							"parameters": {
+								"object-to-create": "Text_Score2",
+								"layer": "2",
+								"x": "580",
+								"y": "480+ loopindex(\"i\")*110"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 205733661666992,
+							"parameters": {
+								"variable": "last",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Text_Score2",
+							"sid": 120200930447098,
+							"parameters": {
+								"instance-variable": "hp",
+								"value": "last"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text_Score2",
+							"sid": 884767077998633,
+							"parameters": {
+								"text": "InstantGames.LeaderboardScoreAt(loopindex(\"i\"))"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "NULL",
+							"sid": 783188600310725
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 142792209544656,
+							"parameters": {
+								"variable": "desplay",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 973888906318584
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-height",
+					"objectClass": "pic",
+					"sid": 735854048099839,
+					"parameters": {
+						"comparison": 1,
+						"height": "85"
+					}
+				},
+				{
+					"id": "compare-width",
+					"objectClass": "pic",
+					"sid": 849547057059623,
+					"parameters": {
+						"comparison": 1,
+						"width": "85"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "pic",
+					"sid": 281282002854626,
+					"parameters": {
+						"width": "85",
+						"height": "85"
+					}
+				}
+			],
+			"sid": 677258421482653
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "NULL",
+					"sid": 470444055771048,
+					"parameters": {
+						"comparison": 1,
+						"y-co-ordinate": "ViewportTop(1) - 100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "NULL",
+					"sid": 871692416813841,
+					"parameters": {
+						"y": "ViewportTop(1) - 100"
+					}
+				}
+			],
+			"sid": 138309458344668
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Text_rank2",
+					"sid": 172332290840066
+				}
+			],
+			"actions": [],
+			"sid": 441222387763948,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Text_rank2",
+							"sid": 919110419437288,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "1120"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 693141921221751,
+							"parameters": {
+								"variable": "slide",
+								"value": "Text_rank2.Y"
+							}
+						}
+					],
+					"sid": 896515944983698
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Text_Score2",
+					"sid": 737350944472078,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 0,
+						"value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 675068738887787,
+					"parameters": {
+						"variable": "lastscore",
+						"value": "Text_Score2.Text"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "check",
+					"sid": 909247169812736,
+					"parameters": {
+						"text": "Text_Score2.Text"
+					}
+				}
+			],
+			"sid": 705397063110795,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 386621749519708,
+							"parameters": {
+								"variable": "HIGHSCORE",
+								"comparison": 2,
+								"value": "lastscore"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 266058692501856,
+							"parameters": {
+								"layer": "\"check\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 128338565434892
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DragScreen",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 447254716042088
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "obj_camera",
+							"sid": 990909315161943,
+							"parameters": {
+								"x": "scrollx",
+								"y": "scrolly"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "obj_pinpoint",
+							"sid": 879778753668678,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "obj_pinpoint",
+							"sid": 337154191430573,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "obj_camera",
+								"mode": "position-only"
+							}
+						}
+					],
+					"sid": 319713306873705
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-touch-speed",
+							"objectClass": "Touch",
+							"sid": 145247298234606,
+							"parameters": {
+								"touch-index": "0",
+								"comparison": 5,
+								"speed": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "obj_camera",
+							"sid": 101483687314866,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "min(2000, distance(Touch.X, Touch.Y, obj_pinpoint.X, obj_pinpoint.Y)*2)"
+							}
+						},
+						{
+							"id": "set-angle-of-motion",
+							"objectClass": "obj_camera",
+							"sid": 890642914881895,
+							"disabled": true,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"angle": "angle(Touch.X, Touch.Y, obj_pinpoint.X, obj_pinpoint.Y)"
+							}
+						}
+					],
+					"sid": 684229689541947,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "obj_pinpoint",
+									"sid": 311154112873141,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "Touch.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "obj_camera",
+									"sid": 837281472333442,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "90"
+									}
+								}
+							],
+							"sid": 279120325947868
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "obj_pinpoint",
+									"sid": 858894375023414,
+									"parameters": {
+										"comparison": 2,
+										"y-co-ordinate": "Touch.Y"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle-of-motion",
+									"objectClass": "obj_camera",
+									"sid": 236101727368932,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"angle": "270"
+									}
+								}
+							],
+							"sid": 319443685840672
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-touch-speed",
+							"objectClass": "Touch",
+							"sid": 340273861710757,
+							"parameters": {
+								"touch-index": "0",
+								"comparison": 2,
+								"speed": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "obj_camera",
+							"sid": 651233059414765,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "obj_camera",
+							"sid": 206378545568026,
+							"parameters": {
+								"x": "scrollx",
+								"y": "scrolly"
+							}
+						},
+						{
+							"id": "unpin",
+							"objectClass": "obj_pinpoint",
+							"sid": 919827093827871,
+							"behaviorType": "Pin"
+						},
+						{
+							"id": "set-position",
+							"objectClass": "obj_pinpoint",
+							"sid": 662317938287672,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						},
+						{
+							"id": "pin-to-object",
+							"objectClass": "obj_pinpoint",
+							"sid": 395802970934279,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "obj_camera",
+								"mode": "position-only"
+							}
+						}
+					],
+					"sid": 738446641674004
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 135088892932395
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 184036345837606,
+							"parameters": {
+								"group-name": "\"DragScreen\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "obj_camera",
+							"sid": 138740031813402,
+							"parameters": {
+								"x": "scrollx",
+								"y": "scrolly"
+							}
+						}
+					],
+					"sid": 819524795629383
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "obj_camera",
+							"sid": 167896827839800,
+							"parameters": {
+								"comparison": 3,
+								"y-co-ordinate": "639"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "obj_camera",
+							"sid": 242771170662418,
+							"parameters": {
+								"y": "640"
+							}
+						}
+					],
+					"sid": 537206239962085
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "obj_camera",
+							"sid": 718783155171925,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "slide + 1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 741738332350513,
+							"parameters": {
+								"variable": "slide",
+								"comparison": 3,
+								"value": "1120"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "obj_camera",
+							"sid": 531865981467136,
+							"parameters": {
+								"y": "slide"
+							}
+						}
+					],
+					"sid": 793264346378372
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "obj_camera",
+							"sid": 235664456000875,
+							"parameters": {
+								"comparison": 5,
+								"y-co-ordinate": "640 + slide - 1120 + 1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 712584079411682,
+							"parameters": {
+								"variable": "slide",
+								"comparison": 4,
+								"value": "1120"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "obj_camera",
+							"sid": 549296720499677,
+							"parameters": {
+								"y": "640 + slide - 1120"
+							}
+						}
+					],
+					"sid": 421951993813615
+				}
+			],
+			"sid": 358886963960884
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ads",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 343414717714949,
+							"parameters": {
+								"key": "\"ads\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 120445441117117,
+							"parameters": {
+								"key": "\"ads\"",
+								"value": "ads"
+							}
+						}
+					],
+					"sid": 149150013557307
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 387287879032250,
+							"parameters": {
+								"key": "\"ads\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 207333397218406,
+							"parameters": {
+								"key": "\"ads\""
+							}
+						}
+					],
+					"sid": 386172939063443
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 511530238627901,
+							"parameters": {
+								"key": "\"ads\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 185286005962122,
+							"parameters": {
+								"variable": "ads",
+								"value": "LocalStorage.ItemValue"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 547508500992732,
+							"parameters": {
+								"variable": "ads",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 920742453816244,
+							"parameters": {
+								"key": "\"ads\"",
+								"value": "ads"
+							}
+						}
+					],
+					"sid": 203925526018535
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 592592839717211,
+							"parameters": {
+								"variable": "ads",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 482549221982997,
+							"parameters": {
+								"variable": "ads",
+								"value": "0"
+							}
+						},
+						{
+							"id": "show-ad",
+							"objectClass": "InstantGames",
+							"sid": 724516718827769,
+							"parameters": {
+								"type": "interstitial"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 900005059847218,
+							"parameters": {
+								"key": "\"ads\"",
+								"value": "ads"
+							}
+						}
+					],
+					"sid": 972614932656363
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-show-ad-success",
+							"objectClass": "InstantGames",
+							"sid": 974125312076056,
+							"parameters": {
+								"type": "interstitial"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load-ad",
+							"objectClass": "InstantGames",
+							"sid": 865690468840648,
+							"parameters": {
+								"type": "interstitial",
+								"placement-id": "\"925787724435371_925837201097090\""
+							}
+						}
+					],
+					"sid": 821791783724834
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-show-ad-error",
+							"objectClass": "InstantGames",
+							"sid": 772903805393857,
+							"parameters": {
+								"type": "interstitial"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load-ad",
+							"objectClass": "InstantGames",
+							"sid": 908630928522076,
+							"parameters": {
+								"type": "interstitial",
+								"placement-id": "\"925787724435371_925837201097090\""
+							}
+						}
+					],
+					"sid": 733796945754400
+				}
+			],
+			"sid": 659416884646052
+		}
+	],
+	"sid": 294148473826376
+}

@@ -1,0 +1,176 @@
+{
+	"name": "button",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 272103123817013,
+					"parameters": {
+						"object": "PlayAgain"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 621290824083258,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 386804229177466,
+					"parameters": {
+						"layer": "\"check\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 750089436287354
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 507950236836054,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 482799013003788
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 102367710164071,
+					"parameters": {
+						"object": "Hud_sound_mute"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-silent",
+					"objectClass": "Audio",
+					"sid": 688242504032646,
+					"parameters": {
+						"mode": "toggle-silent"
+					}
+				}
+			],
+			"sid": 957806708103925
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-silent",
+					"objectClass": "Audio",
+					"sid": 513003705146329
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Hud_sound_mute",
+					"sid": 575382521054110,
+					"parameters": {
+						"frame-number": "1"
+					}
+				},
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 338431717372637,
+					"parameters": {
+						"db": "-100"
+					}
+				}
+			],
+			"sid": 406260988605101
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-silent",
+					"objectClass": "Audio",
+					"sid": 555457110511257,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Hud_sound_mute",
+					"sid": 904580800530121,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 215201371575528,
+					"parameters": {
+						"db": "0"
+					}
+				}
+			],
+			"sid": 341308654715209
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 770562996298431,
+					"parameters": {
+						"object": "share"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 574063260658681,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "share",
+					"objectClass": "InstantGames",
+					"sid": 807952542633816,
+					"parameters": {
+						"intent": "share",
+						"image": "icon",
+						"text": "\"\"",
+						"data": "\"\""
+					}
+				}
+			],
+			"sid": 165727880509472
+		}
+	],
+	"sid": 917527316825913
+}

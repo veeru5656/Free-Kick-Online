@@ -1,0 +1,16 @@
+{
+	"name": "playerScore",
+	"plugin-id": "Text",
+	"sid": 648480078240904,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "hp",
+			"type": "number",
+			"desc": "",
+			"sid": 747310620179632
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": []
+}

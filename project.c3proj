@@ -1,0 +1,475 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 22500,
+	"name": "Free Kick Online",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "InstantGames",
+			"name": "Instant Games",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Function",
+			"name": "Function",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		}
+	],
+	"uniqueId": "1r6yye0b6jd9x",
+	"objectTypes": {
+		"items": [
+			"Background",
+			"GoalPost",
+			"Target",
+			"Football",
+			"Sky",
+			"cloud",
+			"Touch",
+			"Sprite",
+			"Text",
+			"Asset8",
+			"part",
+			"keeper",
+			"Asset7",
+			"load2",
+			"title",
+			"playback",
+			"play",
+			"score_text",
+			"Text3",
+			"life",
+			"Asset6",
+			"Text4",
+			"backpost",
+			"spriteanimation",
+			"goalpostland2",
+			"goalpostland",
+			"up",
+			"Audio",
+			"direction",
+			"boolean",
+			"LocalStorage",
+			"Hud_sound_mute",
+			"InstantGames",
+			"Leaderboard",
+			"share",
+			"DB_BG",
+			"Text_rank",
+			"TextName",
+			"pic",
+			"NULL",
+			"Text_Score",
+			"Back",
+			"LeaderTittle",
+			"dark",
+			"Function",
+			"obj_camera",
+			"obj_pinpoint",
+			"SpriteFont",
+			"icon",
+			"TextName2",
+			"Text_Score2",
+			"PlayAgain",
+			"Asset2",
+			"Text_rank2",
+			"check",
+			"Text2",
+			"playerScore",
+			"playerName",
+			"PlayerRank",
+			"pic2",
+			"load",
+			"DB_BG2"
+		],
+		"subfolders": []
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Game",
+			"main",
+			"Layout 1",
+			"Leaderboard"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Game",
+			"main",
+			"Leaderboard",
+			"button"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "ball_fade.m4a",
+					"type": "audio/mp4",
+					"sid": 801051913927329
+				},
+				{
+					"name": "ball_fade.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 872647340916849
+				},
+				{
+					"name": "button.m4a",
+					"type": "audio/mp4",
+					"sid": 631819460462693
+				},
+				{
+					"name": "button.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 998871676721219
+				},
+				{
+					"name": "explosion_1.m4a",
+					"type": "audio/mp4",
+					"sid": 176572831248407
+				},
+				{
+					"name": "explosion_1.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 111683221844899
+				},
+				{
+					"name": "football-kick-01-soccer-by_yio.m4a",
+					"type": "audio/mp4",
+					"sid": 965227733263054
+				},
+				{
+					"name": "football-kick-01-soccer-by_yio.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 847968073566829
+				},
+				{
+					"name": "football-kick-02-soccer-by_yio.m4a",
+					"type": "audio/mp4",
+					"sid": 529637123920673
+				},
+				{
+					"name": "football-kick-02-soccer-by_yio.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 628143846705706
+				},
+				{
+					"name": "football-kick-03-soccer-by_yio.m4a",
+					"type": "audio/mp4",
+					"sid": 702688484085986
+				},
+				{
+					"name": "football-kick-03-soccer-by_yio.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 742981714300067
+				},
+				{
+					"name": "match_theme.m4a",
+					"type": "audio/mp4",
+					"sid": 783301705414425
+				},
+				{
+					"name": "match_theme.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 325326382313957
+				},
+				{
+					"name": "click.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 870008788773029
+				},
+				{
+					"name": "click.m4a",
+					"type": "audio/mp4",
+					"sid": 635963280474690
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "whistle.m4a",
+					"type": "audio/mp4",
+					"sid": 331312502512814
+				},
+				{
+					"name": "whistle.ogg",
+					"type": "audio/ogg; codecs=vorbis",
+					"sid": 317496487339081
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 673488540491695,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 872862845330937,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-114.png",
+					"type": "image/png",
+					"sid": 965861882775814,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 173213358971458,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 936206551446293,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 135617944837971,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "http://",
+		"appId": "com.mycompany.myapp",
+		"pixelRounding": false,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "any",
+		"enableWebGL": true,
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "progress",
+		"preloadSounds": true,
+		"clearBackground": true,
+		"enhancedAccelerationPrecision": true,
+		"cordovaiOSScheme": "file"
+	},
+	"viewportWidth": 720,
+	"viewportHeight": 1280,
+	"firstLayout": "main"
+}

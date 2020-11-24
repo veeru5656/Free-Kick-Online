@@ -1,0 +1,63 @@
+{
+	"name": "keeper",
+	"plugin-id": "Sprite",
+	"sid": 509275167721977,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 806007462931383
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 157,
+						"height": 400,
+						"originX": 0.503185,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\keeper-default-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9,
+						"collisionPoly": {
+							"points": [
+								0.229299,
+								0.09,
+								0.496815,
+								0,
+								0.770701,
+								0.09,
+								1,
+								0.5,
+								0.942675,
+								0.9775,
+								0.496815,
+								0.9975,
+								0.0509554,
+								0.98,
+								0.00636943,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 907896765290013,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

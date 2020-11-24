@@ -1,0 +1,57 @@
+{
+	"name": "spriteanimation",
+	"plugin-id": "Sprite",
+	"sid": 225124349063767,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 87,
+						"height": 21,
+						"originX": 0.505747,
+						"originY": 0.52381,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\sprite-animation 1-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 22,
+						"collisionPoly": {
+							"points": [
+								0.0804598,
+								0.333333,
+								0.494253,
+								0.142857,
+								0.908046,
+								0.380952,
+								0.885057,
+								0.47619,
+								0.885057,
+								0.52381,
+								0.494253,
+								0.666667,
+								0.114943,
+								0.52381,
+								0.091954,
+								0.47619
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 882755800000263,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

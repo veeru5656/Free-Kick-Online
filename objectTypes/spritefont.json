@@ -1,0 +1,27 @@
+{
+	"name": "SpriteFont",
+	"plugin-id": "Spritefont2",
+	"sid": 130653910991061,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "var",
+			"type": "number",
+			"desc": "",
+			"sid": 498352221716915
+		}
+	],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"image": {
+		"width": 1024,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\Users\\LinBeck\\Desktop\\SpriteFont_Royals_Regular_(48)_[0,0,0,0]_50x63.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 82,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,165 @@
+{
+	"name": "life",
+	"plugin-id": "Sprite",
+	"sid": 550902949748079,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 416,
+						"height": 99,
+						"originX": 0,
+						"originY": 0.50505,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\life-default-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 15,
+						"collisionPoly": {
+							"points": [
+								0.0360577,
+								0.151515,
+								0.966346,
+								0.141414,
+								0.997596,
+								0.494949,
+								0.963942,
+								0.848485,
+								0.0336538,
+								0.858586,
+								0.00240385,
+								0.494949
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 417,
+						"height": 99,
+						"originX": 0,
+						"originY": 0.50505,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\life-default-001.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 16,
+						"collisionPoly": {
+							"points": [
+								0.0359712,
+								0.151515,
+								0.964029,
+								0.151515,
+								0.997602,
+								0.494949,
+								0.964029,
+								0.848485,
+								0.0359712,
+								0.848485,
+								0.00479616,
+								0.494949
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 416,
+						"height": 99,
+						"originX": 0,
+						"originY": 0.50505,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\life-default-002.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 17,
+						"collisionPoly": {
+							"points": [
+								0.0360577,
+								0.151515,
+								0.966346,
+								0.141414,
+								0.997596,
+								0.494949,
+								0.963942,
+								0.848485,
+								0.0336538,
+								0.858586,
+								0.00240385,
+								0.494949
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 417,
+						"height": 99,
+						"originX": 0,
+						"originY": 0.50505,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\life-default-003.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 18,
+						"collisionPoly": {
+							"points": [
+								0.0359712,
+								0.151515,
+								0.964029,
+								0.151515,
+								0.997602,
+								0.494949,
+								0.964029,
+								0.848485,
+								0.0359712,
+								0.848485,
+								0.00479616,
+								0.494949
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 416,
+						"height": 100,
+						"originX": 0,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\life-default-004.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 19,
+						"collisionPoly": {
+							"points": [
+								0.0360577,
+								0.15,
+								0.963942,
+								0.15,
+								0.997596,
+								0.5,
+								0.963942,
+								0.85,
+								0.0360577,
+								0.85,
+								0.00240385,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 674123638404370,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

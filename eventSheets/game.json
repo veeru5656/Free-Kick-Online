@@ -1,0 +1,1896 @@
+{
+	"name": "Game",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "BallSize",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 110513434594742
+		},
+		{
+			"eventType": "variable",
+			"name": "SwipeDone",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 307700380848908
+		},
+		{
+			"eventType": "variable",
+			"name": "TouchY1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 709216701356102
+		},
+		{
+			"eventType": "variable",
+			"name": "TouchY2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 524242305159584
+		},
+		{
+			"eventType": "variable",
+			"name": "onCollion",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 199513249974387
+		},
+		{
+			"eventType": "variable",
+			"name": "SCORE",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 759314597908967
+		},
+		{
+			"eventType": "variable",
+			"name": "life",
+			"type": "number",
+			"initialValue": "4",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 703532446657060
+		},
+		{
+			"eventType": "variable",
+			"name": "speed",
+			"type": "number",
+			"initialValue": "3000",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 743253850282730
+		},
+		{
+			"eventType": "variable",
+			"name": "start",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 913704867695779
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "cloud",
+					"sid": 209369787378629,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "-30"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "cloud",
+					"sid": 393416633839876,
+					"parameters": {
+						"x": "Self.X-2"
+					}
+				}
+			],
+			"sid": 329347567596280
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "life",
+					"sid": 682712749688543,
+					"parameters": {
+						"frame-number": "life"
+					}
+				}
+			],
+			"sid": 379048864756287
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "cloud",
+					"sid": 667619893485518,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-30"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "cloud",
+					"sid": 807094704413004,
+					"parameters": {
+						"x": "770"
+					}
+				}
+			],
+			"sid": 498136435556281
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 880772777240848
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 197297503546505,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 642647417959628,
+					"parameters": {
+						"audio-file": "match_theme",
+						"loop": "looping",
+						"volume": "-20",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 823592454355753
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 337787045572818
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 390155962551831,
+					"parameters": {
+						"variable": "TouchY1",
+						"value": "Touch.Y"
+					}
+				}
+			],
+			"sid": 926885693307856
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 910213322699814
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 941591184660177,
+					"parameters": {
+						"variable": "SwipeDone",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 910910153230681,
+					"parameters": {
+						"variable": "TouchY2",
+						"value": "Touch.Y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "direction",
+					"sid": 629627137186593,
+					"parameters": {
+						"x": "Touch.X",
+						"y": "Touch.Y"
+					}
+				}
+			],
+			"sid": 947356228084768,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 432706966065559,
+							"parameters": {
+								"variable": "TouchY2",
+								"comparison": 2,
+								"value": "TouchY1-50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 914859505805924,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "choose(\"football-kick-01-soccer-by_YIO\",\"football-kick-02-soccer-by_YIO\",\"football-kick-03-soccer-by_YIO\")",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 193847563756952,
+							"parameters": {
+								"variable": "SwipeDone",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Football",
+							"sid": 458461890107800,
+							"disabled": true,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "boolean",
+							"sid": 274218852405656,
+							"parameters": {
+								"instance-variable": "bullet",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Football",
+							"sid": 593592834653897,
+							"parameters": {
+								"x": "direction.X",
+								"y": "direction.Y"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "spriteanimation",
+							"sid": 694850569589435,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 354767468487302
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 476265416962520,
+					"parameters": {
+						"variable": "BallSize",
+						"comparison": 4,
+						"value": "0.49"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "boolean",
+					"sid": 783592646862735,
+					"parameters": {
+						"instance-variable": "bullet"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 536576382163888,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 974049744721408,
+					"parameters": {
+						"variable": "BallSize",
+						"value": "0.029"
+					}
+				}
+			],
+			"sid": 415516154673224
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 210912650104615,
+					"parameters": {
+						"variable": "BallSize",
+						"comparison": 2,
+						"value": "0.49"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "boolean",
+					"sid": 780280664497805,
+					"parameters": {
+						"instance-variable": "bullet"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "boolean",
+					"sid": 962756220229383,
+					"parameters": {
+						"instance-variable": "bullet",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 686797251342990,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 591944692664995,
+					"parameters": {
+						"variable": "start",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 357535488082923,
+					"parameters": {
+						"variable": "BallSize",
+						"value": "0.45"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 899348900276402,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 385041061362508,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "1"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "Football",
+					"sid": 558383104945565,
+					"parameters": {
+						"where": "behind",
+						"object": "Target"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "Football",
+					"sid": 543477345739818,
+					"parameters": {
+						"where": "behind",
+						"object": "keeper"
+					}
+				}
+			],
+			"sid": 427398658861311
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 313100538098496,
+					"parameters": {
+						"variable": "start",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "boolean",
+					"sid": 756759298154632,
+					"parameters": {
+						"instance-variable": "bullet"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 876186303858128,
+					"parameters": {
+						"variable": "start",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 577066183745679,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 222557780566873,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Football",
+					"sid": 220493437958593,
+					"parameters": {
+						"x": "367",
+						"y": "1104"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "spriteanimation",
+					"sid": 156633761692213,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "move-to-layer",
+					"objectClass": "Football",
+					"sid": 808519417801961,
+					"parameters": {
+						"layer": "\"Game\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Football",
+					"sid": 455379552164041,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "speed"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 572322215187623,
+					"parameters": {
+						"variable": "BallSize",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 909175872297141,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Football",
+					"sid": 721050374808950,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "-90"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 835615136829168,
+					"parameters": {
+						"variable": "SwipeDone",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 624859365600329,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "goalpostland2",
+					"sid": 576135295454233,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "enabled"
+					}
+				}
+			],
+			"sid": 687992133849321
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Football",
+					"sid": 193655775118724,
+					"parameters": {
+						"object": "Target"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Football",
+					"sid": 801981052374066,
+					"parameters": {
+						"object": "keeper"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 412182929390046,
+					"parameters": {
+						"variable": "onCollion",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 495688634011577,
+					"parameters": {
+						"audio-file": "explosion_1",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "Football",
+					"sid": 969925149765819,
+					"parameters": {
+						"where": "behind",
+						"object": "keeper"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Target",
+					"sid": 865347924216059
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 297642725939832,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "1"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 322339396976538,
+					"parameters": {
+						"variable": "SCORE",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text",
+					"sid": 351843888376203,
+					"parameters": {
+						"text": "score"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 818480661165235,
+					"parameters": {
+						"variable": "start",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 582857594413067,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 594011748225360,
+					"parameters": {
+						"object-to-create": "Target",
+						"layer": "\"back\"",
+						"x": "random(220, 511)",
+						"y": "random(308, 230)"
+					}
+				}
+			],
+			"sid": 305186860141288
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Football",
+					"sid": 618107894569210,
+					"parameters": {
+						"object": "backpost"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Football",
+					"sid": 707024823068523,
+					"parameters": {
+						"object": "Target"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 546787645315130,
+					"parameters": {
+						"variable": "onCollion",
+						"comparison": 0,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "backpost",
+					"sid": 695213574343864,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 190051516987132,
+					"parameters": {
+						"audio-file": "ball_fade",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 209209114417524,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 535534912496283,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "GoalPost",
+					"sid": 486199753689443,
+					"parameters": {
+						"y": "Self.Y-3"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 739289135036737,
+					"parameters": {
+						"seconds": "0.3"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "GoalPost",
+					"sid": 665699413999598,
+					"parameters": {
+						"y": "Self.Y+3"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "Football",
+					"sid": 416144151486156,
+					"parameters": {
+						"where": "behind",
+						"object": "keeper"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 941753882448108,
+					"parameters": {
+						"variable": "BallSize",
+						"value": "0.45"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 932656507182867,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 954481924554328,
+					"parameters": {
+						"variable": "start",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 934161152674003
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Football",
+					"sid": 428354857598523,
+					"parameters": {
+						"object": "backpost"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "backpost",
+					"sid": 521658742605843,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Football",
+					"sid": 779771221780099,
+					"parameters": {
+						"object": "Target"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 147503311956722,
+					"parameters": {
+						"variable": "onCollion",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 924712708396603,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 137337821884649,
+					"parameters": {
+						"audio-file": "ball_fade",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 719564788577489,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "Football",
+					"sid": 286501211778035,
+					"parameters": {
+						"where": "behind",
+						"object": "keeper"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 564763585370647,
+					"parameters": {
+						"variable": "BallSize",
+						"value": "0.45"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 830639084338128,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 511118156844635,
+					"parameters": {
+						"variable": "start",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 136732928937224
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Football",
+					"sid": 227004277408756,
+					"parameters": {
+						"object": "keeper"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 687900190074333,
+					"parameters": {
+						"variable": "onCollion",
+						"comparison": 2,
+						"value": "0.6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 187057377073016,
+					"parameters": {
+						"variable": "onCollion",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 807031317465847,
+					"parameters": {
+						"audio-file": "ball_fade",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 762226955131407,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 186780160533405,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "goalpostland2",
+					"sid": 904731698931402,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "move-to-layer",
+					"objectClass": "Football",
+					"sid": 671113088022433,
+					"parameters": {
+						"layer": "\"Game\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 384945805969164,
+					"disabled": true,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "boolean",
+					"sid": 890102436585391,
+					"parameters": {
+						"instance-variable": "bullet",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 298967639116357,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "apply-impulse-at-angle",
+					"objectClass": "Football",
+					"sid": 249683095953410,
+					"behaviorType": "Physics",
+					"parameters": {
+						"impulse": "11",
+						"angle": "choose(0,20,180,170,190)",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 969605756603784,
+					"parameters": {
+						"variable": "start",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 701188115359367
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-outside-layout",
+					"objectClass": "Football",
+					"sid": 571988974227564
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 351877402223600
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 479119757324404,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "1"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 143757479567925,
+					"parameters": {
+						"variable": "life",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 427452670559144,
+					"disabled": true,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "boolean",
+					"sid": 659057186862182,
+					"parameters": {
+						"instance-variable": "bullet",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 325437274159035,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 506125283439120,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 967374549986851,
+					"behaviorType": "Physics",
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Football",
+					"sid": 475960767908606,
+					"parameters": {
+						"x": "367",
+						"y": "1104"
+					}
+				},
+				{
+					"id": "move-to-layer",
+					"objectClass": "Football",
+					"sid": 517320829273039,
+					"parameters": {
+						"layer": "\"Game\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Football",
+					"sid": 200878966070026,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"speed": "speed"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 427310268706526,
+					"parameters": {
+						"variable": "BallSize",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Football",
+					"sid": 693808941698789,
+					"parameters": {
+						"scale": "BallSize"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Football",
+					"sid": 195049108433199,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "-90"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 202477059495681,
+					"parameters": {
+						"variable": "SwipeDone",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 829832578990316,
+					"parameters": {
+						"variable": "onCollion",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 894856054187029
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "Target",
+					"sid": 709279098852601
+				}
+			],
+			"actions": [
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Target",
+					"sid": 773424711875313,
+					"parameters": {
+						"object": "part",
+						"layer": "\"Game\"",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "part",
+					"sid": 422064698444662,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "0"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "part",
+					"sid": 950961216284983,
+					"parameters": {
+						"where": "behind",
+						"object": "Football"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Target",
+					"sid": 658865228306625,
+					"parameters": {
+						"object": "part",
+						"layer": "\"Game\"",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "part",
+					"sid": 270134618853623,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "90"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "part",
+					"sid": 502092004154522,
+					"parameters": {
+						"where": "behind",
+						"object": "Football"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Target",
+					"sid": 930508412051286,
+					"parameters": {
+						"object": "part",
+						"layer": "\"Game\"",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "part",
+					"sid": 130611344852002,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "180"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "part",
+					"sid": 121617296814195,
+					"parameters": {
+						"where": "behind",
+						"object": "Football"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Target",
+					"sid": 344530533639684,
+					"parameters": {
+						"object": "part",
+						"layer": "\"Game\"",
+						"image-point": "0"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "part",
+					"sid": 291871811284288,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"angle": "270"
+					}
+				},
+				{
+					"id": "move-to-object",
+					"objectClass": "part",
+					"sid": 698219612698953,
+					"parameters": {
+						"where": "behind",
+						"object": "Football"
+					}
+				}
+			],
+			"sid": 449059100080954
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-on-screen",
+					"objectClass": "up",
+					"sid": 653595596085471
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "up",
+					"sid": 560289624314522,
+					"parameters": {
+						"y": "Self.Y-5"
+					}
+				}
+			],
+			"sid": 202512299796050
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "up",
+					"sid": 413390253239748,
+					"parameters": {
+						"comparison": 3,
+						"y-co-ordinate": "800"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "up",
+					"sid": 750086874327400,
+					"parameters": {
+						"y": "1066"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "up",
+					"sid": 846952422221805,
+					"parameters": {
+						"instance-variable": "hp",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 328299903029444
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "up",
+					"sid": 439731832833075,
+					"parameters": {
+						"instance-variable": "hp",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "up",
+					"sid": 922815179442338
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Asset6",
+					"sid": 988494535796815
+				}
+			],
+			"sid": 740128338667095
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 309717038181042,
+					"parameters": {
+						"variable": "life",
+						"comparison": 3,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 848116343524642,
+					"parameters": {
+						"audio-file": "whistle",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 276329498767219,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 370880290478092,
+					"parameters": {
+						"layout": "Leaderboard"
+					}
+				}
+			],
+			"sid": 423471228601796,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 142379661007742,
+							"parameters": {
+								"variable": "SCORE",
+								"comparison": 4,
+								"value": "HIGHSCORE"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 200508772659249,
+							"parameters": {
+								"variable": "HIGHSCORE",
+								"value": "SCORE"
+							}
+						},
+						{
+							"id": "set-score",
+							"objectClass": "InstantGames",
+							"sid": 149160589882830,
+							"parameters": {
+								"name": "\"highscore\"",
+								"is-contextual": "no",
+								"score": "SCORE"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 654140659670261,
+							"disabled": true,
+							"parameters": {
+								"text": "\"highscore\"&newline&HIGHSCORE"
+							}
+						}
+					],
+					"sid": 349190046255261,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 502194414520174
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "SpriteFont",
+							"sid": 965759503265571,
+							"parameters": {
+								"text": "\"highscore\"&newline&HIGHSCORE"
+							}
+						}
+					],
+					"sid": 417563860442589,
+					"disabled": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Target",
+					"sid": 301417518086646
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "Target",
+					"sid": 213607647374477,
+					"parameters": {
+						"width": "163",
+						"height": "163"
+					}
+				}
+			],
+			"sid": 664720289422716
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 185975515851032,
+					"parameters": {
+						"variable": "SCORE",
+						"comparison": 0,
+						"value": "5"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 532951911708368
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 349768276111032,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 370312373355084,
+					"parameters": {
+						"object-to-create": "keeper",
+						"layer": "\"Layer 0\"",
+						"x": "353",
+						"y": "330"
+					}
+				}
+			],
+			"sid": 263582565721590
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Target",
+					"sid": 233119360111546
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "Target",
+					"sid": 657383065992026,
+					"parameters": {
+						"width": "163",
+						"height": "163"
+					}
+				}
+			],
+			"sid": 722470513673169,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 139787446291605,
+							"parameters": {
+								"variable": "SCORE",
+								"comparison": 2,
+								"value": "12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-movement",
+							"objectClass": "Target",
+							"sid": 886824439949772,
+							"behaviorType": "Sine",
+							"parameters": {
+								"movement": "vertical"
+							}
+						}
+					],
+					"sid": 716474710522776
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 263835844133233,
+							"parameters": {
+								"variable": "SCORE",
+								"comparison": 5,
+								"value": "12"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-movement",
+							"objectClass": "Target",
+							"sid": 942898045160702,
+							"behaviorType": "Sine",
+							"parameters": {
+								"movement": "horizontal"
+							}
+						},
+						{
+							"id": "set-magnitude",
+							"objectClass": "Target",
+							"sid": 906442775965442,
+							"behaviorType": "Sine",
+							"parameters": {
+								"magnitude": "60"
+							}
+						}
+					],
+					"sid": 349486689147741
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 840913066259650,
+							"parameters": {
+								"variable": "SCORE",
+								"comparison": 4,
+								"value": "22"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-period",
+							"objectClass": "Target",
+							"sid": 967316704638052,
+							"behaviorType": "Sine",
+							"parameters": {
+								"period": "3"
+							}
+						}
+					],
+					"sid": 844758234517743
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "boolean",
+					"sid": 340612739730617,
+					"parameters": {
+						"instance-variable": "bullet"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 497541731551324,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 497363817471655
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "boolean",
+					"sid": 151546193314632,
+					"parameters": {
+						"instance-variable": "bullet"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Football",
+					"sid": 425490895015991,
+					"behaviorType": "Bullet",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 629852267605197
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "sound",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 192594739083123,
+							"parameters": {
+								"object": "Hud_sound_mute"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 348400181205314,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 405160555830032
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 344023066549164
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Hud_sound_mute",
+							"sid": 489616004306686,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 819771746872055,
+							"parameters": {
+								"db": "-100"
+							}
+						}
+					],
+					"sid": 540038941106382
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 890349539069003,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Hud_sound_mute",
+							"sid": 174558867055387,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 208450301951518,
+							"parameters": {
+								"db": "0"
+							}
+						}
+					],
+					"sid": 988261758505731
+				}
+			],
+			"sid": 469084978189827
+		}
+	],
+	"sid": 628561561379789
+}

@@ -1,0 +1,49 @@
+{
+	"name": "Asset6",
+	"plugin-id": "Sprite",
+	"sid": 397298568168425,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 163,
+						"height": 142,
+						"originX": 0.503067,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\asset6-default-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 20,
+						"collisionPoly": {
+							"points": [
+								0.0674847,
+								0.0774648,
+								0.865031,
+								0.15493,
+								0.435583,
+								0.352113,
+								0.552147,
+								0.366197
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 461284180543712,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"name": "Football",
+	"plugin-id": "Sprite",
+	"sid": 933060802018147,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 976195239320025
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 222458974863137
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 168,
+						"height": 165,
+						"originX": 0.505952,
+						"originY": 0.50303,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\plugin\\Football kick\\images\\football-animation 1-000.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 3,
+						"collisionPoly": {
+							"points": [
+								0.147778,
+								0.147778,
+								0.5,
+								0.00111111,
+								0.852222,
+								0.147778,
+								0.998889,
+								0.5,
+								0.851111,
+								0.851111,
+								0.5,
+								0.998889,
+								0.148889,
+								0.851111,
+								0.00111111,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 343901100449567,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

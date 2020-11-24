@@ -1,0 +1,55 @@
+{
+	"name": "Leaderboard",
+	"plugin-id": "Sprite",
+	"sid": 160128599069882,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 976188600264861
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 258,
+						"height": 144,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\oumah\\Desktop\\Podium-icon.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 30,
+						"collisionPoly": {
+							"points": [
+								0.0426357,
+								0,
+								0.953488,
+								0,
+								0.953488,
+								0.972222,
+								0.0426357,
+								0.979167
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 797165262990435,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

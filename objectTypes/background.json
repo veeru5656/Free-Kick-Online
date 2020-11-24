@@ -1,0 +1,49 @@
+{
+	"name": "Background",
+	"plugin-id": "Sprite",
+	"sid": 476192142533715,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 721,
+						"height": 1280,
+						"originX": 0.500694,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\AI\\football\\background.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 0,
+						"collisionPoly": {
+							"points": [
+								0.00138696,
+								0.00078125,
+								1,
+								0,
+								1,
+								1,
+								0.00138696,
+								0.999219
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 709851416932164,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

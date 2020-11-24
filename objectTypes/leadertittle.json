@@ -1,0 +1,26 @@
+{
+	"name": "LeaderTittle",
+	"plugin-id": "Spritefont2",
+	"sid": 706692397464340,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 635251950462306
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 512,
+		"height": 512,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "C:\\FONTS\\LuckiestGuy-36px_v7.png",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 78,
+		"useCollisionPoly": true
+	}
+}

@@ -1,0 +1,65 @@
+{
+	"name": "GoalPost",
+	"plugin-id": "Sprite",
+	"sid": 892867829884577,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Physics",
+			"name": "Physics",
+			"sid": 537541472549337
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 473,
+						"height": 274,
+						"originX": 0.501057,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\veeru\\OneDrive\\whatapps\\AI\\football\\post.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1,
+						"collisionPoly": {
+							"points": [
+								0.00634249,
+								0.0364964,
+								0.498943,
+								0,
+								0.987315,
+								0.0328467,
+								1,
+								0.989051,
+								0.938161,
+								0.97354,
+								0.893235,
+								0.833941,
+								0.107822,
+								0.828467,
+								0.0623679,
+								0.963504,
+								0,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 336508257724096,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

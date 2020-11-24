@@ -1,0 +1,364 @@
+{
+	"name": "main",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Hcore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 537022972734700
+		},
+		{
+			"eventType": "variable",
+			"name": "HIGHSCORE",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 349376277431432
+		},
+		{
+			"eventType": "variable",
+			"name": "started",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 603575868335482
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 158174929581366,
+					"parameters": {
+						"object": "playback"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 724921014657066
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 367530565789536,
+					"parameters": {
+						"layout": "Game"
+					}
+				}
+			],
+			"sid": 310625136913235
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 699526183288693
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "LocalStorage",
+					"sid": 494619669151233,
+					"disabled": true,
+					"parameters": {
+						"key": "\"Hscore\""
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 449627516555958
+				},
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 641618219412044,
+					"disabled": true,
+					"parameters": {
+						"text": "\"highscore\"&newline&HIGHSCORE"
+					}
+				},
+				{
+					"id": "subscribe-bot",
+					"objectClass": "InstantGames",
+					"sid": 130181678934710
+				},
+				{
+					"id": "load-player-score",
+					"objectClass": "InstantGames",
+					"sid": 498694465507771,
+					"parameters": {
+						"name": "\"highscores\"",
+						"is-contextual": "no"
+					}
+				},
+				{
+					"id": "load-leaderboard",
+					"objectClass": "InstantGames",
+					"sid": 542502327701771,
+					"parameters": {
+						"name": "\"highscores\"",
+						"is-contextual": "no",
+						"results": "all",
+						"count": "20",
+						"offset": "0"
+					}
+				},
+				{
+					"id": "load-image-from-url",
+					"objectClass": "pic",
+					"sid": 573771982115318,
+					"parameters": {
+						"uri": "InstantGames.PlayerPhotoURL",
+						"size": "keep-current-size",
+						"cross-origin": "anonymous"
+					}
+				},
+				{
+					"id": "load-ad",
+					"objectClass": "InstantGames",
+					"sid": 253948802519514,
+					"parameters": {
+						"type": "interstitial",
+						"placement-id": "\"925787724435371_925837201097090\""
+					}
+				}
+			],
+			"sid": 650454745752280
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "sound2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 676012430808611,
+							"parameters": {
+								"object": "Hud_sound_mute"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 199188172950980,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 451605398806185
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 961378674557357
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Hud_sound_mute",
+							"sid": 444038876558809,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 456649954666776,
+							"parameters": {
+								"db": "-100"
+							}
+						}
+					],
+					"sid": 386953111382314
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 445232672451763,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Hud_sound_mute",
+							"sid": 729541435810354,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 975083216507563,
+							"parameters": {
+								"db": "0"
+							}
+						}
+					],
+					"sid": 945047518206031
+				}
+			],
+			"sid": 298399526886811
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-player-score-loaded",
+					"objectClass": "InstantGames",
+					"sid": 109876221778123
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 672870688054501,
+					"parameters": {
+						"variable": "HIGHSCORE",
+						"value": "InstantGames.PlayerScore"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "SpriteFont",
+					"sid": 928456736031134,
+					"parameters": {
+						"text": "\"highscores\"&newline&HIGHSCORE"
+					}
+				}
+			],
+			"sid": 276891315263710
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 551618417697164,
+					"parameters": {
+						"object": "share"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 141977388068577,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "share",
+					"objectClass": "InstantGames",
+					"sid": 561306302962513,
+					"parameters": {
+						"intent": "share",
+						"image": "icon",
+						"text": "\"\"",
+						"data": "\"\""
+					}
+				}
+			],
+			"sid": 826121471143330
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 780942209916732,
+					"parameters": {
+						"object": "Leaderboard"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 964105549585565,
+					"parameters": {
+						"audio-file": "click",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 890025589514066,
+					"parameters": {
+						"layout": "Leaderboard"
+					}
+				}
+			],
+			"sid": 114237453658964
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-leaderboard-loaded",
+					"objectClass": "InstantGames",
+					"sid": 939158682054043
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 548221808283278,
+					"parameters": {
+						"variable": "leader_length",
+						"value": "InstantGames.LeaderboardResultCount"
+					}
+				}
+			],
+			"sid": 733286666636102
+		}
+	],
+	"sid": 613373453897237
+}
