@@ -1,0 +1,157 @@
+{
+	"name": "incoming",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 859508011328139
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 482678305613557,
+					"parameters": {
+						"variable": "SwipeDone",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 560322773405560,
+					"parameters": {
+						"variable": "TouchY2",
+						"value": "Touch.Y"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "direction",
+					"sid": 363844777725042,
+					"parameters": {
+						"x": "Touch.X",
+						"y": "Touch.Y"
+					}
+				}
+			],
+			"sid": 275191202562497,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 164165948193428,
+							"parameters": {
+								"variable": "TouchY2",
+								"comparison": 2,
+								"value": "TouchY1-50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 432272547933318,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "choose(\"football-kick-01-soccer-by_YIO\",\"football-kick-02-soccer-by_YIO\",\"football-kick-03-soccer-by_YIO\")",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Football",
+							"sid": 352233426258262,
+							"disabled": true,
+							"behaviorType": "Bullet",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 886567415828954
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-message",
+					"objectClass": "Multiplayer",
+					"sid": 324348147975893,
+					"parameters": {
+						"tag": "\"shot\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "data",
+					"sid": 546649003835125,
+					"parameters": {
+						"json": "Multiplayer.Message"
+					}
+				}
+			],
+			"sid": 582587969976616,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 713039792213598,
+							"parameters": {
+								"variable": "SwipeDone",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "boolean",
+							"sid": 450485765545689,
+							"parameters": {
+								"instance-variable": "bullet",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-angle-toward-position",
+							"objectClass": "Football",
+							"sid": 799369008556485,
+							"parameters": {
+								"x": "data.Get(\"x\")",
+								"y": "data.Get(\"y\")"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "spriteanimation",
+							"sid": 273793770138515,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 381531264676658
+				}
+			]
+		}
+	],
+	"sid": 175466002358513
+}

@@ -3,9 +3,17 @@
 	"savedWithRelease": 22500,
 	"name": "Free Kick Online",
 	"runtime": "c3",
-	"useWorker": "auto",
+	"useWorker": "dom",
 	"bundleAddons": false,
 	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Dictionary",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
 		{
 			"type": "plugin",
 			"id": "Sprite",
@@ -74,6 +82,38 @@
 			"type": "plugin",
 			"id": "Function",
 			"name": "Function",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Multiplayer",
+			"name": "Multiplayer",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
 			"author": "Scirra",
 			"version": "r225",
 			"bundled": false
@@ -149,6 +189,14 @@
 			"author": "Scirra",
 			"version": "r225",
 			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Anchor",
+			"name": "Anchor",
+			"author": "Scirra",
+			"version": "r225",
+			"bundled": false
 		}
 	],
 	"uniqueId": "1r6yye0b6jd9x",
@@ -215,9 +263,40 @@
 			"PlayerRank",
 			"pic2",
 			"load",
-			"DB_BG2"
+			"DB_BG2",
+			"DialogConnectionInfo",
+			"player1",
+			"ConnectionInfo",
+			"photframe2",
+			"Sprite9",
+			"photoid",
+			"photframe",
+			"photoid2",
+			"photoframe2",
+			"notfound",
+			"search2",
+			"token2",
+			"colorname",
+			"again",
+			"Label",
+			"NameTextBox",
+			"Button",
+			"Multiplayer",
+			"Mouse"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"Player_Distribution",
+					"Player_Photo",
+					"serialize_dict",
+					"Player_Names",
+					"data"
+				],
+				"subfolders": [],
+				"name": "data"
+			}
+		]
 	},
 	"autosaveData": null,
 	"containers": [],
@@ -230,7 +309,9 @@
 			"Game",
 			"main",
 			"Layout 1",
-			"Leaderboard"
+			"Leaderboard",
+			"Layout 2",
+			"Connect"
 		],
 		"subfolders": []
 	},
@@ -239,9 +320,22 @@
 			"Game",
 			"main",
 			"Leaderboard",
-			"button"
+			"button",
+			"Event sheet 1",
+			"Connect"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"peer",
+					"host",
+					"outgoing",
+					"incoming"
+				],
+				"subfolders": [],
+				"name": "multiplayer"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {

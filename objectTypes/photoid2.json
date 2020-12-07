@@ -1,0 +1,50 @@
+{
+	"name": "photoid2",
+	"plugin-id": "Sprite",
+	"sid": 785935166754878,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "id_image",
+			"type": "number",
+			"desc": "",
+			"sid": 472918069429131
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Anchor",
+			"name": "Anchor",
+			"sid": 533637468456579
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 178,
+						"height": 178,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7704358,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 495908949148802,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

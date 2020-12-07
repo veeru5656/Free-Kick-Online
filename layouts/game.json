@@ -351,8 +351,8 @@
 						}
 					},
 					"world": {
-						"x": 360,
-						"y": 278.70401001,
+						"x": -464,
+						"y": 210,
 						"width": 173.111999512,
 						"height": 173.111999512,
 						"originX": 0.505155,
@@ -851,7 +851,10 @@
 						"live-preview": false
 					},
 					"uid": 3,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"widthf": 0,
+						"heightf": 0
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {
@@ -984,6 +987,52 @@
 						"angle": 0,
 						"zElevation": 0
 					}
+				},
+				{
+					"type": "keeper",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Default",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 124,
+					"instanceVariables": {
+						"x_move": ""
+					},
+					"behaviors": {
+						"Sine": {
+							"properties": {
+								"movement": "horizontal",
+								"wave": "sine",
+								"period": 3,
+								"period-random": 0,
+								"period-offset": 0,
+								"period-offset-random": 0,
+								"magnitude": 200,
+								"magnitude-random": 0,
+								"enabled": true,
+								"live-preview": false
+							}
+						}
+					},
+					"world": {
+						"x": 357,
+						"y": 288,
+						"width": 100.863998413,
+						"height": 256.979003906,
+						"originX": 0.503185,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
 				}
 			],
 			"sid": 184854776089370,
@@ -1012,7 +1061,38 @@
 		}
 	],
 	"sid": 793561215518068,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "Player_Distribution",
+			"properties": {},
+			"uid": 120,
+			"instanceVariables": {}
+		},
+		{
+			"type": "Player_Photo",
+			"properties": {},
+			"uid": 121,
+			"instanceVariables": {}
+		},
+		{
+			"type": "serialize_dict",
+			"properties": {},
+			"uid": 122,
+			"instanceVariables": {}
+		},
+		{
+			"type": "Player_Names",
+			"properties": {},
+			"uid": 123,
+			"instanceVariables": {}
+		},
+		{
+			"type": "data",
+			"properties": {},
+			"uid": 126,
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 720,
 	"height": 1280,

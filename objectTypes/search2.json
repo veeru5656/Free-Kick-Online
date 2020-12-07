@@ -1,0 +1,77 @@
+{
+	"name": "search2",
+	"plugin-id": "Sprite",
+	"sid": 172894914692116,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Sin",
+			"name": "Sine",
+			"sid": 435862928834480
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine2",
+			"sid": 464065759463577
+		},
+		{
+			"behaviorId": "Sin",
+			"name": "Sine3",
+			"sid": 813702778456929
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 222,
+						"height": 222,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\TecenGOD\\YandexDisk\\Touch Football\\sprites\\multyplayer\\search.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 6238530,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 222,
+						"height": 222,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\TecenGOD\\YandexDisk\\Touch Football\\sprites\\multyplayer\\search_done.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7526212,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 222,
+						"height": 222,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\TecenGOD\\YandexDisk\\Touch Football\\sprites\\multyplayer\\search_error.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7679283,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 254189385057517,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

@@ -154,7 +154,9 @@
 						"live-preview": false
 					},
 					"uid": 15,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"x_move": ""
+					},
 					"behaviors": {
 						"Sine": {
 							"properties": {

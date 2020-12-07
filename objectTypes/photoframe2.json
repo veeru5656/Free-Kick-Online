@@ -1,0 +1,113 @@
+{
+	"name": "photoframe2",
+	"plugin-id": "Sprite",
+	"sid": 104677257845577,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 445,
+						"height": 445,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\AshleyTemp\\Dropbox\\Scirra information\\Marketing\\Construct 3 - Specific\\Logos\\screen bitmap (RGB)\\C3 symbol transparent\\C3symbol-fullcolor-darkBGtransparent-RGB-512px.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5907121,
+						"collisionPoly": {
+							"points": [
+								0.011235955056179775,
+								0.011235955056179775,
+								0.9887640449438202,
+								0.011235955056179775,
+								0.9887640449438202,
+								0.9887640449438202,
+								0.011235955056179775,
+								0.9887640449438202
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 445,
+						"height": 445,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\AshleyTemp\\Dropbox\\Scirra information\\Marketing\\Construct 3 - Specific\\Logos\\screen bitmap (RGB)\\C3 symbol transparent\\C3symbol-fullcolor-darkBGtransparent-RGB-512px.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 694693,
+						"collisionPoly": {
+							"points": [
+								0.3730332764044944,
+								0.44494338876404493,
+								0.45617977528089887,
+								0.38651671011235955,
+								0.4258429123595506,
+								0.5584267505617978,
+								0.5955059056179776,
+								0.5280898876404494,
+								0.5505615101123595,
+								0.6224716224719101,
+								0.45617977528089887,
+								0.6685389662921348,
+								0.3741573752808989,
+								0.6101122876404494,
+								0.3438205123595505,
+								0.5280898876404494
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 445,
+						"height": 445,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "C:\\Users\\AshleyTemp\\Dropbox\\Scirra information\\Marketing\\Construct 3 - Specific\\Logos\\screen bitmap (RGB)\\C3 symbol transparent\\C3symbol-fullcolor-darkBGtransparent-RGB-512px.png",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2304182,
+						"collisionPoly": {
+							"points": [
+								0.3730332764044944,
+								0.44494338876404493,
+								0.45617977528089887,
+								0.38651671011235955,
+								0.4258429123595506,
+								0.5584267505617978,
+								0.5955059056179776,
+								0.5280898876404494,
+								0.5505615101123595,
+								0.6224716224719101,
+								0.45617977528089887,
+								0.6685389662921348,
+								0.3741573752808989,
+								0.6101122876404494,
+								0.3438205123595505,
+								0.5280898876404494
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 391680429132758,
+				"name": "Default",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

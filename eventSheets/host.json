@@ -1,0 +1,47 @@
+{
+	"name": "host",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "host",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 812936607532038
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Football",
+							"sid": 205560248902677,
+							"parameters": {
+								"instance-variable": "widthf",
+								"value": "Self.Width"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Football",
+							"sid": 236737375918422,
+							"parameters": {
+								"instance-variable": "heightf",
+								"value": "Self.Height"
+							}
+						}
+					],
+					"sid": 613191394249444
+				}
+			],
+			"sid": 335827616336551
+		}
+	],
+	"sid": 612675682520172
+}

@@ -1,0 +1,59 @@
+{
+	"name": "outgoing",
+	"events": [
+		{
+			"functionName": "host",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 742552835920097,
+					"parameters": {
+						"group-name": "\"host\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 462989272295093,
+					"parameters": {
+						"group-name": "\"Main\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 494840507425063
+		},
+		{
+			"functionName": "peer",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 722191059271332,
+					"parameters": {
+						"group-name": "\"peer\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 664716662737847
+		}
+	],
+	"sid": 998442873277135
+}

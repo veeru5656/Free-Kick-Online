@@ -1,0 +1,101 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "MyUsername",
+			"type": "string",
+			"initialValue": "",
+			"comment": "Name entered on login screen",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 248736283332147
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Button",
+					"sid": 398415653387686
+				}
+			],
+			"actions": [],
+			"sid": 914031078653431,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-text",
+							"objectClass": "NameTextBox",
+							"sid": 145290786864499,
+							"parameters": {
+								"text": "\"\"",
+								"case": "case-insensitive"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "supports-multiplayer",
+							"objectClass": "Multiplayer",
+							"sid": 423200955152356
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 901513657355463,
+							"parameters": {
+								"variable": "MyUsername",
+								"value": "NameTextBox.Text"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 302649941721963,
+							"parameters": {
+								"layout": "Connect"
+							}
+						}
+					],
+					"sid": 694165141535858
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 437000361113346
+				}
+			],
+			"actions": [
+				{
+					"id": "set-css-style",
+					"objectClass": "Button",
+					"sid": 860756140569438,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"30px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "NameTextBox",
+					"sid": 290721013945008,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"30px\""
+					}
+				}
+			],
+			"sid": 738564097157323
+		}
+	],
+	"sid": 711588252479759
+}

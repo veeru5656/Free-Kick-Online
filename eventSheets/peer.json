@@ -1,0 +1,158 @@
+{
+	"name": "peer",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "peer",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-client-update",
+							"objectClass": "Multiplayer",
+							"sid": 200928719427293
+						}
+					],
+					"actions": [],
+					"sid": 242407699723537
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 755887826058811
+						}
+					],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 555170507626296,
+							"parameters": {
+								"key": "\"x\"",
+								"value": "direction.X"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "data",
+							"sid": 393171054319094,
+							"parameters": {
+								"key": "\"y\"",
+								"value": "direction.Y"
+							}
+						}
+					],
+					"sid": 238469569326299,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Football",
+									"sid": 301404351541282
+								},
+								{
+									"id": "destroy",
+									"objectClass": "keeper",
+									"sid": 185663091206916
+								}
+							],
+							"sid": 954464208331873
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 840840316633660
+						}
+					],
+					"actions": [
+						{
+							"id": "set-width",
+							"objectClass": "Football",
+							"sid": 509566285457214,
+							"parameters": {
+								"width": "Self.widthf"
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "Football",
+							"sid": 291910286344904,
+							"parameters": {
+								"height": "Self.heightf"
+							}
+						}
+					],
+					"sid": 230786475405541
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-end",
+							"objectClass": "Touch",
+							"sid": 960417314991138
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "direction",
+							"sid": 690810509889057,
+							"parameters": {
+								"x": "Touch.X",
+								"y": "Touch.Y"
+							}
+						},
+						{
+							"id": "set-key",
+							"objectClass": "data",
+							"sid": 166386914953005,
+							"parameters": {
+								"key": "\"x\"",
+								"value": "direction.X"
+							}
+						},
+						{
+							"id": "set-key",
+							"objectClass": "data",
+							"sid": 766598446496721,
+							"parameters": {
+								"key": "\"y\"",
+								"value": "direction.Y"
+							}
+						},
+						{
+							"id": "send-message",
+							"objectClass": "Multiplayer",
+							"sid": 593436152511498,
+							"parameters": {
+								"peer-id": "\"\"",
+								"tag": "\"shot\"",
+								"message": "data.AsJSON",
+								"mode": "reliable-ordered"
+							}
+						}
+					],
+					"sid": 259806016104217
+				}
+			],
+			"sid": 425905423175111
+		}
+	],
+	"sid": 745814954387522
+}

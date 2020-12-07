@@ -677,7 +677,10 @@
 						"live-preview": false
 					},
 					"uid": 29,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"widthf": 0,
+						"heightf": 0
+					},
 					"behaviors": {
 						"Bullet": {
 							"properties": {

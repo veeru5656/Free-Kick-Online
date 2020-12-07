@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 509275167721977,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "x_move",
+			"type": "string",
+			"desc": "",
+			"sid": 199179783317467
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Sin",
@@ -34,15 +41,9 @@
 								0.770701,
 								0.09,
 								1,
-								0.5,
-								0.942675,
-								0.9775,
-								0.496815,
-								0.9975,
-								0.0509554,
-								0.98,
-								0.00636943,
-								0.5
+								0.6574999999999999,
+								0,
+								0.6499999999999998
 							]
 						},
 						"useCollisionPoly": true,

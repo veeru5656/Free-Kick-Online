@@ -1,0 +1,514 @@
+{
+	"name": "Connect",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "outgoing"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "incoming"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 108443346355464
+				}
+			],
+			"actions": [
+				{
+					"id": "clear",
+					"objectClass": "Player_Names",
+					"sid": 963526024047062
+				},
+				{
+					"id": "clear",
+					"objectClass": "Player_Distribution",
+					"sid": 886153980571976
+				},
+				{
+					"callFunction": "Connect",
+					"sid": 591476328495814
+				}
+			],
+			"sid": 964139087543424,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "player1",
+							"sid": 770513428803807,
+							"parameters": {
+								"instance-variable": "id",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "player1",
+							"sid": 338684090650030,
+							"parameters": {
+								"text": "MyUsername"
+							}
+						}
+					],
+					"sid": 501219846760949
+				}
+			]
+		},
+		{
+			"functionName": "Connect",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "sync-object",
+					"objectClass": "Multiplayer",
+					"sid": 117170727743555,
+					"parameters": {
+						"object": "Football",
+						"data": "position-only",
+						"precision": "normal-float-4-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "sync-object",
+					"objectClass": "Multiplayer",
+					"sid": 827832332126986,
+					"parameters": {
+						"object": "keeper",
+						"data": "position-only",
+						"precision": "normal-float-4-bytes",
+						"bandwidth": "normal-bandwidth-unpredictable"
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "Multiplayer",
+					"sid": 119257038265529,
+					"parameters": {
+						"object": "Football",
+						"instance-variable": {
+							"name": "widthf",
+							"objectClass": "Football"
+						},
+						"precision": "normal-float-4-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "sync-instance-variable",
+					"objectClass": "Multiplayer",
+					"sid": 746169129213520,
+					"parameters": {
+						"object": "Football",
+						"instance-variable": {
+							"name": "heightf",
+							"objectClass": "Football"
+						},
+						"precision": "normal-float-4-bytes",
+						"interpolation": "none",
+						"client-value-tag": "\"\""
+					}
+				},
+				{
+					"id": "connect",
+					"objectClass": "Multiplayer",
+					"sid": 465408043754226,
+					"parameters": {
+						"server": "\"wss://multiplayer.scirra.com\""
+					}
+				}
+			],
+			"sid": 844344886508300
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-connected",
+					"objectClass": "Multiplayer",
+					"sid": 101625041670442
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DialogConnectionInfo",
+					"sid": 122899333104433,
+					"parameters": {
+						"text": "\"Connected to server. logging-in.\" "
+					}
+				},
+				{
+					"id": "log-in",
+					"objectClass": "Multiplayer",
+					"sid": 230901520745491,
+					"parameters": {
+						"alias": "MyUsername"
+					}
+				}
+			],
+			"sid": 953812370711525
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-logged-in",
+					"objectClass": "Multiplayer",
+					"sid": 174159389501299
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "DialogConnectionInfo",
+					"sid": 154513020384924,
+					"parameters": {
+						"text": "\"Logged in as \" & Multiplayer.MyAlias"
+					}
+				},
+				{
+					"id": "auto-join-room",
+					"objectClass": "Multiplayer",
+					"sid": 786444193653470,
+					"parameters": {
+						"game": "\"FootBallKick\"",
+						"instance": "\"Facebook\"",
+						"first-room": "\"default\"",
+						"max-peers": "2",
+						"locking": "lock-when-full"
+					}
+				}
+			],
+			"sid": 698051081682579,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 542464337725739
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "The host will get this extra info, mainly for debugging reasons."
+						},
+						{
+							"id": "set-text",
+							"objectClass": "DialogConnectionInfo",
+							"sid": 201153611989108,
+							"disabled": true,
+							"parameters": {
+								"text": "\"You are the host. \" "
+							}
+						}
+					],
+					"sid": 695106218100483
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-joined-room",
+					"objectClass": "Multiplayer",
+					"sid": 474296206099800
+				}
+			],
+			"actions": [],
+			"sid": 158383921143483,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 762525926101589
+						}
+					],
+					"actions": [
+						{
+							"id": "add-key",
+							"objectClass": "Player_Distribution",
+							"sid": 344280061412475,
+							"parameters": {
+								"key": "\"W1\"",
+								"value": "Multiplayer.MyID"
+							}
+						},
+						{
+							"id": "add-key",
+							"objectClass": "Player_Names",
+							"sid": 156692703891616,
+							"parameters": {
+								"key": "Multiplayer.MyID",
+								"value": "Multiplayer.MyAlias"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "DialogConnectionInfo",
+							"sid": 909370174324408,
+							"parameters": {
+								"text": "\"Joined room as host , Waiting for the opponent to join\""
+							}
+						}
+					],
+					"sid": 277887103078010
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-peer-connected",
+					"objectClass": "Multiplayer",
+					"sid": 158607960558932
+				}
+			],
+			"actions": [],
+			"sid": 265984894466102,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 986334739995501
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "DialogConnectionInfo",
+							"sid": 919164121826897,
+							"parameters": {
+								"text": "\"Opponent Join\""
+							}
+						}
+					],
+					"sid": 573119096568086,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Player_Distribution",
+									"sid": 768430897903844,
+									"parameters": {
+										"key": "Multiplayer.PeerID"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Player_Distribution",
+									"sid": 180000563900450,
+									"parameters": {
+										"key": "Player_Distribution.KeyCount = 1 ? \"W2\" : Player_Distribution.KeyCount = 2 ? \"Z1\" : \"Z2\"",
+										"value": "Multiplayer.PeerID"
+									}
+								},
+								{
+									"id": "add-key",
+									"objectClass": "Player_Names",
+									"sid": 602282381682424,
+									"parameters": {
+										"key": "Multiplayer.PeerID",
+										"value": "Multiplayer.PeerAlias"
+									}
+								}
+							],
+							"sid": 137663679114020,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"callFunction": "host",
+											"sid": 752633672863318
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 681137190669483,
+											"parameters": {
+												"seconds": "2"
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 527967541131572,
+											"parameters": {
+												"layout": "Game"
+											}
+										}
+									],
+									"sid": 959391669853534
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-host",
+							"objectClass": "Multiplayer",
+							"sid": 797665215748036,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "DialogConnectionInfo",
+							"sid": 693811454652789,
+							"parameters": {
+								"text": "\"Opponent Join\""
+							}
+						},
+						{
+							"callFunction": "peer",
+							"sid": 959072911624386
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 525131697036180,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 697006204062471,
+							"parameters": {
+								"layout": "Game"
+							}
+						}
+					],
+					"sid": 582683202789328
+				}
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "error",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-error",
+							"objectClass": "Multiplayer",
+							"sid": 740096042394193
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Just the error, for debugging purposes"
+						},
+						{
+							"id": "append-text",
+							"objectClass": "DialogConnectionInfo",
+							"sid": 807646158260192,
+							"parameters": {
+								"text": "\"Error : \" & Multiplayer.ErrorMessage & newline"
+							}
+						}
+					],
+					"sid": 536242164553273
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-kicked",
+							"objectClass": "Multiplayer",
+							"sid": 806285193057937
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "DialogConnectionInfo",
+							"sid": 243118934789049,
+							"parameters": {
+								"text": "\"Connection error Trying to reconnect\""
+							}
+						},
+						{
+							"id": "disconnect-signalling",
+							"objectClass": "Multiplayer",
+							"sid": 970506828338526
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 332416831677577,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 241102486461095
+						}
+					],
+					"sid": 607257268194300
+				}
+			],
+			"sid": 315629542384415,
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0,
+				0,
+				0,
+				0
+			]
+		}
+	],
+	"sid": 323958652788877
+}
